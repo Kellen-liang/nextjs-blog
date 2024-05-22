@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
-import { ViewTransitions } from 'next-view-transitions';
+import { ViewTransitions } from "next-view-transitions";
+import { ThemeProvider } from "../components/provider";
+import { Header } from "@/components/custom/header";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +23,21 @@ export default function Layout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
-        <body>{children}</body>
+      <html lang="zh-CN" className="dark" suppressHydrationWarning suppressContentEditableWarning>
+        <head>
+          <title>123</title>
+        </head>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <Header></Header>
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </ViewTransitions>
   );
