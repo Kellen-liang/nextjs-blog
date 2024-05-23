@@ -23,17 +23,14 @@ export default function Layout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="zh-CN" className="dark" suppressHydrationWarning suppressContentEditableWarning>
-        <head>
-          <title>123</title>
-        </head>
+      <html lang="zh-CN" suppressHydrationWarning suppressContentEditableWarning >
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen bg-skin-fill font-sans antialiased",
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="light">
+          <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
             <Header></Header>
             {children}
           </ThemeProvider>

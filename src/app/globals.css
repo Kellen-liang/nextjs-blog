@@ -26,7 +26,6 @@
     @apply bg-skin-fill text-skin-base;
   }
   a {
-    /* @apply hover:text-red-300 dark:hover:text-blue-400 */
-    @apply text-skin-accent;
+    @apply hover:text-skin-accent;
   }
 }
