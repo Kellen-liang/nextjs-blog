@@ -1,1 +1,1 @@
-export * from './use-is-client';
+export { useIsClient } from './use-is-client';

@@ -1,0 +1,104 @@
+{
+  "extends": ["eslint:recommended", "next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "@stylistic/ts", "@stylistic/eslint-plugin"],
+  "rules": {
+    /**
+     * 补分号
+     */
+    "@stylistic/semi": ["error", "always"],
+    /**
+     * 必须使用===判断相等，字符串、数组、布尔值除外
+     */
+    "eqeqeq": ["error", "smart"],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    /**
+     * 使用单引号
+     */
+    "@stylistic/quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    /**
+     * 首选使用const定义常量
+     */
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    /**
+     * 使用两个空格缩进
+     */
+    "@stylistic/indent": [
+      "error",
+      2,
+      {
+        "MemberExpression": 1,
+        "FunctionExpression": { "body": 1, "parameters": 2 },
+        "CallExpression": { "arguments": "first" }
+      }
+    ],
+    /**
+     * 强制空行不能超过1行，文件结尾/开头不能有空行
+     */
+    "@stylistic/no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
+    /**
+     * 自动添加箭头函数参数括号
+     */
+    "@stylistic/arrow-parens": ["error", "always"],
+
+    /**
+     * 强制对象文字、解构赋值和导入/导出说明符的大括号内的间距保持一致
+     */
+    "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/array-bracket-spacing": ["error", "always"],
+    /**
+     * 换行规则，0为禁用
+     * "unix"：强制使用 Unix 风格的换行符（\n）。
+     * "windows"：强制使用 Windows 风格的换行符（\r\n）。
+     * "auto"：自动检测文件中的换行符风格，保持一致性。如果文件中有混合的换行符风格，会报告为错误。
+     */
+    "@stylistic/linebreak-style": 0,
+    /**
+     * 在三元表达式的操作数之间强制换行
+     */
+    "@stylistic/multiline-ternary": "off",
+    /**
+     * 多行对象尾随逗号
+     */
+    "@stylistic/comma-dangle": ["error", "always-multiline"],
+    /**
+     * 禁止不必要的代码块
+     */
+    "no-lone-blocks": "error"
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "eslint-config"]
+}

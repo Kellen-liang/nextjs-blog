@@ -1,8 +1,9 @@
+import { Signature } from '@/app/ui/signature';
 
 export default function Home() {
   return (
-   <main className="mx-auto max-w-3xl">
-    
-   </main>
+    <main id='container'>
+      <Signature />
+    </main>
   );
 }

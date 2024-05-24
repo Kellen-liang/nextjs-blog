@@ -28,4 +28,7 @@
   a {
     @apply hover:text-skin-accent;
   }
-}
+  #container {
+    @apply mx-auto max-w-3xl
+  }
+} 
