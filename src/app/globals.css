@@ -29,6 +29,19 @@
     @apply hover:text-skin-accent;
   }
   #container {
-    @apply mx-auto max-w-3xl
+    @apply mx-auto max-w-3xl;
   }
-} 
+  h1 {
+    @apply inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  h2 {
+    @apply inline-block text-xl font-bold sm:my-8 sm:text-3xl;
+  }
+}
+
+@layer components {
+  svg.link-svg {
+    @apply inline-block h-6 w-6 scale-125 fill-transparent  hover:rotate-6
+    stroke-current stroke-2 opacity-90 sm:scale-110; 
+  }
+}
