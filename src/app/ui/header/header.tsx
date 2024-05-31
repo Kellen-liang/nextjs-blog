@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <>
-      <div className='mx-auto max-w-3xl flex w-full items-start justify-between p-4 sm:items-center sm:py-8'>
+      <div className='mx-auto max-w-3xl flex w-full items-start justify-between p-4 h-20'>
         <a
           href='/'
           className='absolute block py-1 text-xl font-semibold sm:static sm:text-2xl whitespace-nowrap'
@@ -44,7 +44,7 @@ export function Header() {
           <ModeToggle />
         </nav>
       </div>
-      <Hr />
+      <Hr className='mx-auto max-w-3xl w-full px-4' />
     </>
   );
 }

@@ -1,24 +1,6 @@
+import { LINKS } from '@/app/config';
 import { Section } from '../../../components/custom/section';
-import { Github, Mail, Twitter } from '../socialIcons';
 import { LinkButton } from '@/components/custom/link-button';
-
-const LINKS = [
-  {
-    name: 'Github',
-    url: 'https://github.com/Kellen-liang',
-    icon: Github,
-  },
-  {
-    name: 'github',
-    url: 'https://x.com/liangzhimingzm',
-    icon: Twitter,
-  },
-  {
-    name: 'email',
-    url: 'mailto://dh18344094637@outlook.com',
-    icon: Mail,
-  },
-];
 
 export function Signature() {
   
@@ -43,7 +25,6 @@ export function Signature() {
             ))
           }
         </div>
-        
       </div>
       
     </Section>

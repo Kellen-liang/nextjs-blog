@@ -1,12 +1,14 @@
+import { clsx } from 'clsx';
 export interface HrProps {
-  noPadding?: boolean;
+  className?: string
+  hrClassName?: string
 }
 
 export function Hr(props: HrProps) {
-  const { noPadding = false } = props;
+  const { className, hrClassName } = props;
   return (
-    <div className={`max-w-3xl mx-auto ${noPadding ? 'px-0' : 'px-4'}`}>
-      <hr className='border-skin-line' />
+    <div className={className}>
+      <hr className={clsx('border-skin-line', hrClassName)} />
     </div>
   );
 }

@@ -25,6 +25,13 @@
       "tailwindcss": ["./node_modules/tailwindcss"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "eslint-config/**/*.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "eslint-config/**/*.js",
+    "src/app/posts/layout.tsxx"
+  ],
   "exclude": ["node_modules"]
 }
