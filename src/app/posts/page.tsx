@@ -2,17 +2,20 @@ import { Section } from '@/components/custom/section';
 import { PostCard } from '../ui/postCard';
 import { LINKS } from '../config';
 import { LinkButton } from '@/components/custom/link-button';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
-import { Breadcrumbs } from '../ui/breadcrumbs/breadcrumbs';
+import { Breadcrumbs } from './breadcrumbs';
 
-export default function Posts(){
+export interface PostsProps {
+ 
+}
+
+export default function Posts({
+  searchParams, 
+}: {
+  searchParams?: {
+    page?: number | string;
+  };
+}){
+
   const posts = [
     {
       id: '123',
@@ -29,19 +32,8 @@ export default function Posts(){
   ];
   return (
     <main id='container' className='flex flex-col'>
-      <Breadcrumbs />
       <Section className='pb-0'>
-        <Breadcrumb className='mb-2 capitalize opacity-70 '>
-          <BreadcrumbList className='hover:opacity-100 hover:text-white'>
-            <BreadcrumbItem >
-              <BreadcrumbLink href='/'>Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem >
-              <BreadcrumbPage>Posts</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <Breadcrumbs currentPage={Number(searchParams?.page || 1)} />
         <h2>Posts</h2>
         <p>All the articles I&rsquo;ve posted</p>
         {
@@ -55,6 +47,7 @@ export default function Posts(){
             />
           ))
         }
+        
       </Section>
       <Section noHr className='px-0 py-4 flex justify-between'>
         <div>All posts.</div>

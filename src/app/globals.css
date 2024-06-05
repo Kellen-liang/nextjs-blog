@@ -42,6 +42,9 @@
 @layer components {
   svg.link-svg {
     @apply inline-block h-6 w-6 scale-125 fill-transparent  hover:rotate-6
-    stroke-current stroke-2 opacity-90 sm:scale-110; 
+    stroke-current stroke-2 opacity-90 sm:scale-110;
+  }
+  .breadcrumb ul li:not(:last-child) a:hover {
+    @apply opacity-100;
   }
 }
